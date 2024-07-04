@@ -11,7 +11,9 @@ const config: Config = {
       colors: {
         customGray: '#ddd',
         customDark: '#3c3c3c',
-        customDarkBlue: '#09005c'
+        customDarkBlue: '#09005c',
+        customPurple: '#7927ff',
+        customPurple2: '#69029926'
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

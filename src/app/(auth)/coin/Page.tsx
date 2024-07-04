@@ -3,7 +3,7 @@
 
 import React from 'react'
 
-const Coin = () => {
+const page = () => {
   return (
     <div>
       <h1>Coin</h1>
@@ -11,4 +11,4 @@ const Coin = () => {
   )
 }
 
-export default Coin
+export default page
