@@ -7,9 +7,17 @@ interface Currency {
   Symbol: string;
 }
 
-interface Coin {
+export interface Coin {
   symbol: string;
+  id: string;
   name: string;
+  price: number;
+  market_cap_rank: number;
+  image: string
+  market_cap_change_24h: string
+  current_price: number
+  price_change_percentage_24h: number
+  market_cap: number
 }
 
 interface CoinContextType {
@@ -48,7 +56,7 @@ const CoinContextProvider: React.FC<CoinContextProviderProps> = ({ children }) =
 
   useEffect(() => {
     fetchAllCoin();
-  }, [currency]);
+  }, []);
 
   const contextValue: CoinContextType = {
     allCoin,

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -22,6 +23,17 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addUtilities }) {
+      const newUtilities = {
+        '.grid-custom': {
+          display: 'grid',
+          gridTemplateColumns: '0.5fr 2fr 1fr 1fr 2fr',
+        },
+      };
+      addUtilities(newUtilities, ['responsive']);
+    }),
+  ],
 };
+
 export default config;
