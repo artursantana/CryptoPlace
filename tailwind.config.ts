@@ -24,14 +24,14 @@ const config: Config = {
     },
   },
   plugins: [
-    plugin(function({ addUtilities }) {
+    plugin(function({ addUtilities, theme, e }) {
       const newUtilities = {
         '.grid-custom': {
           display: 'grid',
           gridTemplateColumns: '0.5fr 2fr 1fr 1fr 2fr',
         },
       };
-      addUtilities(newUtilities, ['responsive']);
+      addUtilities(newUtilities);
     }),
   ],
 };
