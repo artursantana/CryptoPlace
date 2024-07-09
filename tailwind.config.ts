@@ -31,7 +31,7 @@ const config: Config = {
           gridTemplateColumns: '0.5fr 2fr 1fr 1fr 2fr',
         },
       };
-      addUtilities(newUtilities, { variants: ['responsive'] });
+      addUtilities(newUtilities, ['responsive']);
     }),
   ],
 };
