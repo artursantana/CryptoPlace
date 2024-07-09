@@ -1,11 +1,11 @@
-import Navbar from "@/components/navbar/Navbar"
 
+import HomePage from './coin/home/page'
 
 export default function Home() {
  return(
   <>
   
-  <h1>homeless</h1>
+  <HomePage/>
   
   </>
  )
