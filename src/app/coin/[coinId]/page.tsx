@@ -1,40 +1,33 @@
 'use client'
-import { useParams } from 'next/navigation'
 import React, { useContext, useEffect, useState } from 'react';
 import { CoinContext, Coin } from '@/context/CoinContext';
 import Image from 'next/image';
 
-const Page: React.FC = () => {
+interface PageProps {
+  params: { coinId: string }
+}
+
+const CoinPage = ({ params }: PageProps) => {
+  const { coinId } = params;
   const context = useContext(CoinContext);
+
   if (!context) {
-    throw new Error("Page must be used within a CoinProvider");
+    throw new Error("CoinPage must be used within a CoinProvider");
   }
 
+  
   const { allCoin } = context;
-  const { id } = useParams();
+  const [product, setProduct] = useState<Coin | null>(null);
+  console.log(product)
 
-  console.log(allCoin)
-
-  
-
-  const [product, setProduct] = useState<Coin>();
-  
-  
-  const FindHandle = () => {
-    
-    if (id && allCoin.length > 0) {
-      const foundCoin = allCoin.find((e) => e.id === id)
-      console.log(id)
-      
-      setProduct(foundCoin);
-      
+  useEffect(() => {
+    if (coinId && allCoin.length > 0) {
+      const foundCoin = allCoin.find((e) => e.id === coinId);
+      setProduct(foundCoin || null);
     }
-  }
-  
-  FindHandle()
+  }, [coinId, allCoin]);
 
-  
-
+  console.log(coinId)
   if (!product) {
     return <div>Loading...</div>;
   }
@@ -50,4 +43,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default CoinPage;

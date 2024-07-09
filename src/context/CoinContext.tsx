@@ -1,4 +1,3 @@
-
 "use client";
 import { createContext, useEffect, useState, ReactNode, Dispatch, SetStateAction } from "react";
 
@@ -57,6 +56,7 @@ const CoinContextProvider: React.FC<CoinContextProviderProps> = ({ children }) =
   useEffect(() => {
     fetchAllCoin();
   }, []);
+  
 
   const contextValue: CoinContextType = {
     allCoin,

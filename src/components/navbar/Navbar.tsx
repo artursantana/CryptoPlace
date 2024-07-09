@@ -52,7 +52,7 @@ const Navbar = () => {
           <Image className='max-width:12vw' src='/assets/logo.png' width={220} height={150} alt='logo'/>
       </Link>
       <ul className='flex gap-40 list-none'>
-        <li className='cursor-pointer'><Link href='/home'>Home</Link></li>
+        <li className='cursor-pointer'><Link href='/coin/home'>Home</Link></li>
         <li className='cursor-pointer'>Features</li>
         <li className='cursor-pointer'>Pricing</li>
         <li className='cursor-pointer'>Blog</li>
